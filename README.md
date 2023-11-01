@@ -70,3 +70,20 @@ class _MyExpandableWidgetState extends State<MyExpandableWidget> {
   }
 }
 ```
+
+## Constructor Example
+
+```
+const Expandi(
+      {Key? key,
+      this.expandableIconWidget,
+      this.marginBetweenExpandableIcon = 0,
+      required this.onExpandCollapseCallback,
+      required this.headerWidget,
+      required this.isExpanded,
+      required this.expandableChild,
+      this.expandableChildAnimationMilliSecondsDuration = 850,
+      this.expandableIconAnimationMilliSecondsDuration = 500,
+      this.headerWidgetEndPadding = 0})
+```
+
