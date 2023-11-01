@@ -20,53 +20,53 @@ A Flutter widget that can expand and collapse with animation
 
 ```
 class MyExpandableWidget extends StatefulWidget {
-const MyExpandableWidget({super.key});
+  const MyExpandableWidget({super.key});
 
-@override
-State<MyExpandableWidget> createState() => _MyExpandableWidgetState();
+  @override
+  State<MyExpandableWidget> createState() => _MyExpandableWidgetState();
 }
 
 class _MyExpandableWidgetState extends State<MyExpandableWidget> {
-bool expanded = false;
+  bool expanded = false;
 
-@override
-Widget build(BuildContext context) {
-return Expandi(
-expandableChildAnimationMilliSecondsDuration: 300,//optional
-onExpandCollapseCallback: (bool isExpanded) {
-setState(() {
-expanded = !isExpanded;
-});
-},
-isExpanded: expanded,
-headerWidget: Container(
-padding: const EdgeInsets.only(top: 20, bottom: 20, right: 20),
-margin: const EdgeInsets.only(left: 20, right: 20),
-color: Colors.black,
-child: Row(
-mainAxisSize: MainAxisSize.max,
-mainAxisAlignment: MainAxisAlignment.start,
-crossAxisAlignment: CrossAxisAlignment.start,
-children: const [
-Expanded(
-child: Text(
-"Expand",
-style: TextStyle(color: Colors.white),
-textAlign: TextAlign.end,
-))
-],
-),
-),
-expandableChild: Container(
-padding: const EdgeInsets.only(top: 20, bottom: 20, left: 12, right: 12),
-margin: const EdgeInsets.only(left: 20, right: 20),
-color: Colors.blue,
-child: const Text(
-"Hello world, greetings from the expandi, this would be a long journey!",
-style: TextStyle(color: Colors.white),
-),
-),
-);
-}
+  @override
+  Widget build(BuildContext context) {
+    return Expandi(
+      expandableChildAnimationMilliSecondsDuration: 300,//optional
+      onExpandCollapseCallback: (bool isExpanded) {
+        setState(() {
+          expanded = !isExpanded;
+        });
+      },
+      isExpanded: expanded,
+      headerWidget: Container(
+        padding: const EdgeInsets.only(top: 20, bottom: 20, right: 20),
+        margin: const EdgeInsets.only(left: 20, right: 20),
+        color: Colors.black,
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+            Expanded(
+                child: Text(
+              "Expand",
+              style: TextStyle(color: Colors.white),
+              textAlign: TextAlign.end,
+            ))
+          ],
+        ),
+      ),
+      expandableChild: Container(
+        padding: const EdgeInsets.only(top: 20, bottom: 20, left: 12, right: 12),
+        margin: const EdgeInsets.only(left: 20, right: 20),
+        color: Colors.blue,
+        child: const Text(
+          "Hello world, greetings from the expandi, this would be a long journey!",
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+    );
+  }
 }
 ```
