@@ -20,7 +20,7 @@ class Expandi extends StatefulWidget {
 
   ///callback fired, when the widget
   ///change its state from collapse to expand and vice versa
-  final Function onExpandCollapseCallback;
+  final Function(bool isExpanded) onExpandCollapseCallback;
 
   ///margin between the header widget and the icon (if provided)
   final double marginBetweenExpandableIcon;
