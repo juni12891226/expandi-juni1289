@@ -15,3 +15,7 @@ A Flutter widget that can expand and collapse with animation
 * Easy to use and manage
 * You have to use your state management, in order to control the state of the widget
 * You can bind this widget with GetX, Provider or any state management you like!
+
+## Basic Setup
+
+
