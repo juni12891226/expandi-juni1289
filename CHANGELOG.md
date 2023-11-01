@@ -6,3 +6,7 @@
 
 * Readme updated
 * Function Callback params added
+
+## 0.0.3
+
+* Readme updated
