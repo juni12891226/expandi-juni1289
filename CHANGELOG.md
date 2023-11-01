@@ -10,3 +10,7 @@
 ## 0.0.3
 
 * Readme updated
+
+## 0.0.4
+
+* Example added
