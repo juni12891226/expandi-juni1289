@@ -77,15 +77,19 @@ class _ExpandiState extends State<Expandi> with SingleTickerProviderStateMixin {
                   widget.onExpandCollapseCallback(widget.isExpanded);
                 },
                 child: widget.headerWidget)),
-        if (widget.expandableIconWidget != null) ...[
+
           SizedBox(width: widget.marginBetweenExpandableIcon),
           GestureDetector(
               onTap: () {
                 widget.onExpandCollapseCallback(widget.isExpanded);
               },
-              child: widget.expandableIconWidget),
+              child: AnimatedRotation(
+                turns: widget.isExpanded ? 0.5 : 0,
+                duration:  Duration(milliseconds:widget.expandableIconAnimationMilliSecondsDuration),
+                child: widget.expandableIconWidget??const Icon(Icons.keyboard_arrow_down,size: 16,color: Colors.purple,),
+              )),
           SizedBox(width: widget.headerWidgetEndPadding)
-        ]
+
       ]),
       AnimatedSize(
           duration: Duration(milliseconds: widget.expandableChildAnimationMilliSecondsDuration),

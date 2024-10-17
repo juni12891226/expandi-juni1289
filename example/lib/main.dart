@@ -32,39 +32,42 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Expandi(
-        expandableChildAnimationMilliSecondsDuration: 300,//optional
-        onExpandCollapseCallback: (bool isExpanded) {
-          setState(() {
-            expanded = !isExpanded;
-          });
-        },
-        isExpanded: expanded,
-        headerWidget: Container(
-          padding: const EdgeInsets.only(top: 20, bottom: 20, right: 20),
-          margin: const EdgeInsets.only(left: 20, right: 20),
-          color: Colors.black,
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              Expanded(
-                  child: Text(
-                    "Expand",
-                    style: TextStyle(color: Colors.white),
-                    textAlign: TextAlign.end,
-                  ))
-            ],
+      body: Container(
+        margin: EdgeInsetsDirectional.only(top: 100),
+        child: Expandi(
+          expandableChildAnimationMilliSecondsDuration: 300,//optional
+          onExpandCollapseCallback: (bool isExpanded) {
+            setState(() {
+              expanded = !isExpanded;
+            });
+          },
+          isExpanded: expanded,
+          headerWidget: Container(
+            padding: const EdgeInsets.only(top: 20, bottom: 20, right: 20),
+            margin: const EdgeInsets.only(left: 20, right: 20),
+            color: Colors.black,
+            child: const Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                    child: Text(
+                      "Expand",
+                      style: TextStyle(color: Colors.white),
+                      textAlign: TextAlign.end,
+                    ))
+              ],
+            ),
           ),
-        ),
-        expandableChild: Container(
-          padding: const EdgeInsets.only(top: 20, bottom: 20, left: 12, right: 12),
-          margin: const EdgeInsets.only(left: 20, right: 20),
-          color: Colors.blue,
-          child: const Text(
-            "Hello world, greetings from the expandi, this would be a long journey!",
-            style: TextStyle(color: Colors.white),
+          expandableChild: Container(
+            padding: const EdgeInsets.only(top: 20, bottom: 20, left: 12, right: 12),
+            margin: const EdgeInsets.only(left: 20, right: 20),
+            color: Colors.blue,
+            child: const Text(
+              "Hello world, greetings from the expandi, this would be a long journey!",
+              style: TextStyle(color: Colors.white),
+            ),
           ),
         ),
       )
