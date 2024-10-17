@@ -45,7 +45,11 @@ class _MyHomePageState extends State<MyHomePage> {
           });
         },
         //added rotating icon here
-        expandableIconWidget: const Icon(Icons.keyboard_arrow_down,size: 40,color: Colors.red,),
+        expandableIconWidget: const Icon(
+          Icons.keyboard_arrow_down,
+          size: 40,
+          color: Colors.red,
+        ),
         marginBetweenExpandableIcon: 40,
         isExpanded: expanded,
         headerContainerDecoration: const BoxDecoration(color: Colors.yellow),
