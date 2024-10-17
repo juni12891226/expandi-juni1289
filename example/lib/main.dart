@@ -37,13 +37,15 @@ class _MyHomePageState extends State<MyHomePage> {
       margin: const EdgeInsetsDirectional.only(top: 100),
       child: Expandi(
         expandableChildAnimationMilliSecondsDuration: 500,
-        expandableIconAnimationMilliSecondsDuration: 1,
+        expandableIconAnimationMilliSecondsDuration: 500,
         //optional
         onExpandCollapseCallback: (bool isExpanded) {
           setState(() {
             expanded = !isExpanded;
           });
         },
+        //added rotating icon here
+        expandableIconWidget: const Icon(Icons.keyboard_arrow_down,size: 40,color: Colors.red,),
         marginBetweenExpandableIcon: 40,
         isExpanded: expanded,
         headerContainerDecoration: const BoxDecoration(color: Colors.yellow),

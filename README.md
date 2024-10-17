@@ -19,35 +19,28 @@ A Flutter widget that can expand and collapse with animation
 ## Basic Setup
 
 ```
-class MyExpandableWidget extends StatefulWidget {
-  const MyExpandableWidget({super.key});
+       Expandi(
+        expandableChildAnimationMilliSecondsDuration: 500,
+        expandableIconAnimationMilliSecondsDuration: 500,
+        //optional
+        onExpandCollapseCallback: (bool isExpanded) {
+          setState(() {
+            expanded = !isExpanded;
+          });
+        },
+        //added rotating icon here
+        expandableIconWidget: const Icon(Icons.keyboard_arrow_down,size: 40,color: Colors.red,),
+        marginBetweenExpandableIcon: 40,
+        isExpanded: expanded,
+        headerContainerDecoration: const BoxDecoration(color: Colors.yellow),
+        headerContainerMargin: const EdgeInsetsDirectional.all(40),
+        headerContainerPadding: const EdgeInsetsDirectional.all(40),
 
-  @override
-  State<MyExpandableWidget> createState() => _MyExpandableWidgetState();
-}
-
-class _MyExpandableWidgetState extends State<MyExpandableWidget> {
-  bool expanded = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return Expandi(
-      expandableChildAnimationMilliSecondsDuration: 300,//optional
-      onExpandCollapseCallback: (bool isExpanded) {
-        setState(() {
-          expanded = !isExpanded;
-        });
-      },
-      isExpanded: expanded,
-      headerWidget: Container(
-        padding: const EdgeInsets.only(top: 20, bottom: 20, right: 20),
-        margin: const EdgeInsets.only(left: 20, right: 20),
-        color: Colors.black,
-        child: Row(
+        headerWidget: const Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+          children: [
             Expanded(
                 child: Text(
               "Expand",
@@ -56,19 +49,17 @@ class _MyExpandableWidgetState extends State<MyExpandableWidget> {
             ))
           ],
         ),
-      ),
-      expandableChild: Container(
-        padding: const EdgeInsets.only(top: 20, bottom: 20, left: 12, right: 12),
-        margin: const EdgeInsets.only(left: 20, right: 20),
-        color: Colors.blue,
-        child: const Text(
-          "Hello world, greetings from the expandi, this would be a long journey!",
-          style: TextStyle(color: Colors.white),
+        expandableChild: Container(
+          padding:
+              const EdgeInsets.only(top: 20, bottom: 20, left: 12, right: 12),
+          margin: const EdgeInsets.only(left: 20, right: 20),
+          color: Colors.blue,
+          child: const Text(
+            "Hello world, greetings from the expandi, this would be a long journey!",
+            style: TextStyle(color: Colors.white),
+          ),
         ),
-      ),
-    );
-  }
-}
+      )
 ```
 
 ## Constructor Example
