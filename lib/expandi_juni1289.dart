@@ -59,7 +59,8 @@ class _ExpandiState extends State<Expandi> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     controller = AnimationController(
-      duration: Duration(milliseconds: widget.expandableChildAnimationMilliSecondsDuration),
+      duration: Duration(
+          milliseconds: widget.expandableChildAnimationMilliSecondsDuration),
       vsync: this,
     );
     animation = CurvedAnimation(
@@ -76,41 +77,57 @@ class _ExpandiState extends State<Expandi> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Column(mainAxisSize: MainAxisSize.min, mainAxisAlignment: MainAxisAlignment.start, crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-      GestureDetector(
-        onTap: () {
-          widget.onExpandCollapseCallback(widget.isExpanded);
-          if (animation.status != AnimationStatus.completed) {
-            controller.forward();
-          } else {
-            controller.animateBack(0, duration: Duration(milliseconds: widget.expandableChildAnimationMilliSecondsDuration));
-          }
-        },
-        child: Container(
-          decoration: widget.headerContainerDecoration,
-          padding: widget.headerContainerPadding,
-          margin: widget.headerContainerMargin,
-          child: Row(mainAxisSize: MainAxisSize.max, mainAxisAlignment: MainAxisAlignment.start, crossAxisAlignment: CrossAxisAlignment.center, children: [
-            Expanded(child: widget.headerWidget),
-            SizedBox(width: widget.marginBetweenExpandableIcon),
-            GestureDetector(
-                onTap: () {
-                  widget.onExpandCollapseCallback(widget.isExpanded);
-                },
-                child: AnimatedRotation(
-                  turns: widget.isExpanded ? 0.5 : 0,
-                  duration: Duration(milliseconds: widget.expandableIconAnimationMilliSecondsDuration),
-                  child: widget.expandableIconWidget ??
-                      const Icon(
-                        Icons.keyboard_arrow_down,
-                        size: 16,
-                        color: Colors.purple,
-                      ),
-                )),
-          ]),
-        ),
-      ),
-      SizeTransition(sizeFactor: animation, axis: Axis.vertical, child: Container(child: widget.expandableChild)),
-    ]);
+    return Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          GestureDetector(
+            onTap: () {
+              widget.onExpandCollapseCallback(widget.isExpanded);
+              if (animation.status != AnimationStatus.completed) {
+                controller.forward();
+              } else {
+                controller.animateBack(0,
+                    duration: Duration(
+                        milliseconds: widget
+                            .expandableChildAnimationMilliSecondsDuration));
+              }
+            },
+            child: Container(
+              decoration: widget.headerContainerDecoration,
+              padding: widget.headerContainerPadding,
+              margin: widget.headerContainerMargin,
+              child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Expanded(child: widget.headerWidget),
+                    SizedBox(width: widget.marginBetweenExpandableIcon),
+                    GestureDetector(
+                        onTap: () {
+                          widget.onExpandCollapseCallback(widget.isExpanded);
+                        },
+                        child: AnimatedRotation(
+                          turns: widget.isExpanded ? 0.5 : 0,
+                          duration: Duration(
+                              milliseconds: widget
+                                  .expandableIconAnimationMilliSecondsDuration),
+                          child: widget.expandableIconWidget ??
+                              const Icon(
+                                Icons.keyboard_arrow_down,
+                                size: 16,
+                                color: Colors.purple,
+                              ),
+                        )),
+                  ]),
+            ),
+          ),
+          SizeTransition(
+              sizeFactor: animation,
+              axis: Axis.vertical,
+              child: Container(child: widget.expandableChild)),
+        ]);
   }
 }
