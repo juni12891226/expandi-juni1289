@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58f7acb8-8ca8-4930-b7a0-a0b7f67a6778" name="Changes" comment="package updated with smooth animation">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="58f7acb8-8ca8-4930-b7a0-a0b7f67a6778" name="Changes" comment="package updated with smooth animation" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -152,7 +150,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729162475803</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="package updated with smooth animation">
+      <option name="closed" value="true" />
+      <created>1729165811822</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1729165811822</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -161,6 +167,7 @@
     <MESSAGE value="change log updated" />
     <MESSAGE value="read me updated" />
     <MESSAGE value="animation added for the icon" />
-    <option name="LAST_COMMIT_MESSAGE" value="animation added for the icon" />
+    <MESSAGE value="package updated with smooth animation" />
+    <option name="LAST_COMMIT_MESSAGE" value="package updated with smooth animation" />
   </component>
 </project>
